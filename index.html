@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List App with localStorage</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>List App with localStorage</h1>
+        <div class="row mb-3 add-box">
+            <div class="col-5 input-box">
+                <input class="form-control" id="name" type="text" placeholder="Name" aria-label="name"
+                    autocomplete="off">
+            </div>
+            <div class="col-5 input-box">
+                <input class="form-control" id="comment" type="text" placeholder="Comment" aria-label="comment"
+                    autocomplete="off">
+            </div>
+            <div class="col-2 button-box">
+                <button type="submit" id="btn" class="btn btn-primary mb-3">Submit</button>
+            </div>
+        </div>
+        <table id="todos">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Comment</th>
+                    <th>Date</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
