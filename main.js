@@ -78,8 +78,16 @@ download.addEventListener("click", () => {
   // JSON形式に変換
   const jsonData = JSON.parse(localStorageData);
 
+  // 現在の日付を取得
+  const today = new Date();
+
+  // 年、月、日を取得
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const day = today.getDate();
+
   // ファイル名を指定してJSONファイルとして保存
-  const fileName = "myData.json";
+  const fileName = `myData_${year}${month}${day} .json`;
   const jsonBlob = new Blob([JSON.stringify(jsonData)], {
     type: "application/json",
   });
