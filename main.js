@@ -20,11 +20,14 @@ const saveDataToLocalStorage = (data) => {
 const displayDataInTable = (data) => {
   todosTableBody.innerHTML = "";
 
+  // データを逆順にする
+  data.reverse();
+
   data.forEach((item, index) => {
     const tr = document.createElement("tr");
     tr.classList.add("align-middle");
     tr.innerHTML = `
-      <td>${index + 1}</td>
+      <td>${data.length - index}</td> <!-- 逆順に表示される番号 -->
       <td>${item.name}</td>
       <td>${item.comment}</td>
       <td>${item.date}</td>
@@ -59,7 +62,7 @@ submitBtn.addEventListener("click", () => {
   data.push(item);
   saveDataToLocalStorage(data);
   displayDataInTable(data);
-  
+
   nameInput.value = "";
   commentInput.value = "";
   nameInput.focus();
