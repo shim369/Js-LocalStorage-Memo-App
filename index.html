@@ -10,19 +10,35 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <style>
+      .form-control-dark {
+        background-color: #343a40;
+        color: #f8f9fa;
+        border: 1px solid #495057;
+      }
+
+      .form-control-dark:focus {
+        background-color: #464c52;
+        color: #f8f9fa;
+      }
+
+      .form-control-dark::placeholder {
+        color: #6c757d;
+        opacity: 1;
+      }
+    </style>
   </head>
 
-  <body>
-    <div class="container">
-      <div class="mb-5 text-center">
-        <h1 class="text-center py-3">List App with localStorage</h1>
+  <body class="bg-dark text-light">
+      <header class="mb-5 px-4 text-center d-flex justify-content-between align-items-center">
+        <h1 class="py-3">List App with localStorage</h1>
         <button type="submit" id="download" class="btn btn-success">Download</button>
-      </div>
+      </header>
       <div class="container">
         <div class="row mb-5">
-          <div class="col-5">
+          <div class="col-12 mb-4">
             <input
-              class="form-control"
+              class="form-control form-control-dark"
               id="name"
               type="text"
               placeholder="Name"
@@ -30,15 +46,15 @@
               autocomplete="off"
             />
           </div>
-          <div class="col-5">
-            <input
-              class="form-control"
+          <div class="col-12 mb-4">
+            <textarea
+              class="form-control form-control-dark"
               id="comment"
-              type="text"
+              rows="3"
               placeholder="Comment"
               aria-label="comment"
               autocomplete="off"
-            />
+            ></textarea>
           </div>
           <div class="col-2">
             <button type="submit" id="btn" class="btn btn-primary">
@@ -46,7 +62,7 @@
             </button>
           </div>
         </div>
-        <table id="todos" class="table table-striped table-hover">
+        <table id="todos" class="table table-dark table-striped table-hover">
           <tbody>
             <tr>
               <th>Id</th>

@@ -27,7 +27,7 @@ const displayDataInTable = (data) => {
     const tr = document.createElement("tr");
     tr.classList.add("align-middle");
     tr.innerHTML = `
-      <td>${data.length - index}</td> <!-- 逆順に表示される番号 -->
+      <td>${data.length - index}</td>
       <td>${item.name}</td>
       <td>${item.comment}</td>
       <td>${item.date}</td>
