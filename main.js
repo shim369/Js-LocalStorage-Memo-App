@@ -20,14 +20,11 @@ const saveDataToLocalStorage = (data) => {
 const displayDataInTable = (data) => {
   todosTableBody.innerHTML = "";
 
-  // データを逆順にする
-  data.reverse();
-
   data.forEach((item, index) => {
     const tr = document.createElement("tr");
     tr.classList.add("align-middle");
     tr.innerHTML = `
-      <td>${data.length - index}</td>
+      <td>${index + 1}</td>
       <td>${item.name}</td>
       <td>${item.comment}</td>
       <td>${item.date}</td>
