@@ -9,30 +9,31 @@ const downloadBtn = document.getElementById("download");
 const getDataFromLocalStorage = () => {
   const dataStr = localStorage.getItem("data");
   return dataStr ? JSON.parse(dataStr) : [];
-}
+};
 
 // データをローカルストレージに保存する関数
 const saveDataToLocalStorage = (data) => {
   localStorage.setItem("data", JSON.stringify(data));
-}
+};
 
 // データをテーブルに表示する関数
 const displayDataInTable = (data) => {
   todosTableBody.innerHTML = "";
 
-  data.forEach((item, index) => {
+  // データを逆順にして表示
+  data.slice().reverse().forEach((item, index) => {
     const tr = document.createElement("tr");
     tr.classList.add("align-middle");
     tr.innerHTML = `
-      <td>${index + 1}</td>
+      <td>${data.length - index}</td>
       <td>${item.name}</td>
       <td>${item.comment}</td>
       <td>${item.date}</td>
-      <td><button class="btn btn-danger" onclick="deleteData(${index})">Delete</button></td>
+      <td><button class="btn btn-danger" onclick="deleteData(${data.length - 1 - index})">Delete</button></td>
     `;
     todosTableBody.appendChild(tr);
   });
-}
+};
 
 // データを削除する関数
 const deleteData = (index) => {
@@ -40,7 +41,7 @@ const deleteData = (index) => {
   data.splice(index, 1);
   saveDataToLocalStorage(data);
   displayDataInTable(data);
-}
+};
 
 // フォームの送信処理
 submitBtn.addEventListener("click", () => {
